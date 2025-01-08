@@ -25,11 +25,11 @@ const testimonials = [
 const TestimonialCard = ({ testimonial, isActive, onClick }) => (
   <div 
     onClick={onClick}
-    className={`w-full max-w-md mx-auto cursor-pointer transition-all duration-300 ${
+    className={`w-full md:max-w-sm lg:max-w-md mx-auto cursor-pointer transition-all duration-300 ${
       isActive ? 'border-b-2 border-[#f97316]' : ''
     }`}
   >
-    <div className="bg-white p-8 rounded-lg">
+    <div className="bg-white p-8 rounded-lg shadow-lg">
       <div className="text-[#f97316] text-6xl font-serif mb-6">"</div>
       <p className="text-gray-600 mb-8">{testimonial.text}</p>
       <div className="flex items-center">
@@ -49,13 +49,13 @@ const ClientsFeedback = () => {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
 
@@ -67,8 +67,8 @@ const ClientsFeedback = () => {
         </h2>
         
         <div className="relative">
-          <div className="flex gap-8">
-            {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+          <div className="flex gap-8 flex-wrap justify-center">
+            {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial) => (
               <TestimonialCard 
                 key={testimonial.id}
                 testimonial={testimonial}
