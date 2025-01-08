@@ -11,7 +11,7 @@ const App = () => {
     <div className="min-h-screen bg-white">
       <div className="bg-[#0B1523] text-white py-4 px-6">
         <div className="container mx-auto flex flex-col md:flex-row justify-center items-center text-sm">
-          <div className="flex flex-wrap justify-center md:justify-start items-center space-x-4">
+          <div className="flex flex-wrap justify-center md:justify-start items-center space-x-4 lg:mr-20">
             <div className="flex items-center space-x-2">
               <Phone size={16} />
               <span>9731125090, 9731125090</span>
